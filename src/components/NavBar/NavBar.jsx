@@ -1,19 +1,32 @@
-import React from 'react'
-import './NavBar.css'
-import CartWidget from '../CartWidget/CartWidget'
+import CartWidget from '../CartWidget/CartWidget';
+//import './NavBar.css';
+import { Link, NavLink } from 'react-router-dom';
 
 const NavBar = () => {
   return (
     <header>
-      <h1>COMPRAS</h1>
+      <Link to="/">
+        <img className='logoMarolio' src={"./img/logo.png"} alt="Logo" />
+      </Link>
+
       <nav>
         <ul>
-          <li>prueba1</li>
-          <li>prueba1</li>
-          <li>prueba1</li>
+          <li>
+            <NavLink to="categoria/2">Procesadores</NavLink>
+          </li>
+
+          <li>
+            <NavLink to="categoria/3">Placas madre</NavLink>
+          </li>
+
+          <li>
+            <NavLink to="categoria/4">Placas de video</NavLink>
+          </li>
+          
         </ul>
       </nav>
-      <CartWidget/>
+
+      <CartWidget />
     </header>
   )
 }
